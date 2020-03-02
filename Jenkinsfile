@@ -4,8 +4,6 @@ node
 	def registry = "shouviksinha/heelloow"
 	def registryCredential = 'dockerhub'
    
-    agent any
-
 
     stage('Clone repository') {
         checkout scm
