@@ -24,7 +24,7 @@ node {
     
         
          {
-            withDockerRegistry([ credentialsId: "4d846b75-af5b-4ff1-a7dd-86ae44a49910", url: "" ])
+            withDockerRegistry([ credentialsId: "4d846b75-af5b-4ff1-a7dd-86ae44a49910", url: "https://registry.hub.docker.com" ])
              {
           app.push("${env.BUILD_NUMBER}")
            echo " Published "
