@@ -24,10 +24,10 @@ node {
         /* 
 			You would need to first register with DockerHub before you can push images to your account
 		*/
-        withDockerRegistry('https://registry.hub.docker.com') {
+         {
             app.push("${env.BUILD_NUMBER}")
-            app.push("latest")
+            echo "published"
             } 
-                echo "Trying to Push Docker Build to DockerHub"
+                
     }
 }
