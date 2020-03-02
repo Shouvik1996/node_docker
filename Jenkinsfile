@@ -24,9 +24,14 @@ node {
     
         
          {
-            app.push("${env.BUILD_NUMBER}")
-            echo "published"
+            withDockerRegistry([ credentialsId: "4d846b75-af5b-4ff1-a7dd-86ae44a49910", url: "" ])
+             {
+          app.push("${env.BUILD_NUMBER}")
+           echo " Published "
+
+        
             } 
                 
-    
+         }
+
 }
