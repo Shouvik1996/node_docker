@@ -2,7 +2,7 @@ node
 {
 	def app
 	def registry = "shouviksinha/heelloow"
-	def registryCredential = ''
+	def registryCredential = 'dockerhub'
    
 
     stage('Clone repository') {
