@@ -1,13 +1,13 @@
-FROM node:11-alpine
+FROM node:11-alpine 
 
-RUN mkdir -p /usr/src/app
+RUN mkdir -p /usr/src/app 
 
-WORKDIR /usr/src/app
+WORKDIR /usr/src/app 
 
-COPY . .
+COPY . .  
 
-RUN npm install
+RUN npm install  
 
-EXPOSE 3000
-
+ EXPOSE 3000
+          
 CMD ["npm", "run", "start"]

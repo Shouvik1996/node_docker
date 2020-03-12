@@ -1,7 +1,7 @@
 node  
 {
 	def app
-	def registry = "shouviksinha/heelloow"
+	def registry = "heelloow"
 	def registryCredential = 'dockerhub'
    
 
