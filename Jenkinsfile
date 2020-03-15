@@ -26,28 +26,14 @@ node
           }
     }   
     
-    stage('Remove Unused docker image') {
-        steps{
-        sh "docker rmi $registry:$BUILD_NUMBER"
-      }
-    }
     stage('DeployToProduction') {
-            steps {
                     script {
-                        sh "docker pull shouviksinha/heelloow:$BUILD_NUMBER"
-                        try {
-                            sh "docker stop heelloow"
-                            sh "docker rm heelloow"
-                        } catch (err) {
-                            echo: 'caught error: $err'
-
+                        sh "docker pull shouviksinha/heelloow"
+                        sh "docker stop heelloow"
+                        sh "docker rm heelloow"
                         sh "docker run --restart always --name heelloow -p 3000:5000 -d shouviksinha/heelloow:$BUILD_NUMBER"
                     }
                 }
-			}
-    
-    
-    }
 
- } 
+    } 
 
