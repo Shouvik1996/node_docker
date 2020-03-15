@@ -23,12 +23,14 @@ node
     	docker.withRegistry( '', registryCredential ) {
             app.push()
             echo "Published to docker hub"
-          }   
+          }
+    }   
     
     stage('Remove Unused docker image') {
         steps{
         sh "docker rmi $registry:$BUILD_NUMBER"
       }
+    }
     stage('DeployToProduction') {
             steps {
                     script {
@@ -47,13 +49,5 @@ node
     
     }
 
-
-
-
-
-
-          } 
-
-
-}
+ } 
 
