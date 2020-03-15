@@ -32,14 +32,14 @@ node
     stage('DeployToProduction') {
             steps {
                     script {
-                        sh "docker pull shouviksinha/heelloow:$BUILD_NUMBER\"
+                        sh "docker pull shouviksinha/heelloow:$BUILD_NUMBER"
                         try {
-                            sh "docker stop heelloow\"
-                            sh "docker rm heelloow\"
+                            sh "docker stop heelloow"
+                            sh "docker rm heelloow"
                         } catch (err) {
                             echo: 'caught error: $err'
 
-                        sh "docker run --restart always --name heelloow -p 3000:5000 -d shouviksinha/heelloow:$BUILD_NUMBER\"
+                        sh "docker run --restart always --name heelloow -p 3000:5000 -d shouviksinha/heelloow:$BUILD_NUMBER"
                     }
                 }
 			}
