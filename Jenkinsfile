@@ -27,7 +27,7 @@ node
     }   
     
     stage('DeployToProduction') {
-                    steps {
+                    script {
                         sh "docker pull shouviksinha/heelloow"
                         sh "docker stop heelloow"
                         sh "docker rm heelloow"
