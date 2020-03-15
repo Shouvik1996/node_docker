@@ -29,10 +29,20 @@ node
         steps{
         sh "docker rmi $registry:$BUILD_NUMBER"
       }
-    stage('Deploy'){
+    stage('DeployToProduction') {
+            steps {
+                    script {
+                        sh "docker pull shouviksinha/heelloow:$BUILD_NUMBER\"
+                        try {
+                            sh "docker stop heelloow\"
+                            sh "docker rm heelloow\"
+                        } catch (err) {
+                            echo: 'caught error: $err'
 
-        sh "docker run -p3000:5000 shouviksinha/heelloow"
-    }
+                        sh "docker run --restart always --name heelloow -p 3000:5000 -d shouviksinha/heelloow:$BUILD_NUMBER\"
+                    }
+                }
+			}
     
     
     }
