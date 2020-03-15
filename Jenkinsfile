@@ -10,7 +10,7 @@ node
     }
 
     stage('Build image') {
-        app = docker.build(registry + ":$BUILD_NUMBER")
+        app = docker.build(registry)
     }
 
     stage('Test image') {
