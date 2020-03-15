@@ -28,9 +28,10 @@ node
     
     stage('DeployToProduction') {
                     script {
-                        sh "docker pull shouviksinha/heelloow"
                         sh "docker stop heelloow"
                         sh "docker rm heelloow"
+                        sh "docker rmi heelloow"
+                        sh "docker pull shouviksinha/heelloow" 
                         sh "docker run --name heelloow -p 3000:5000 -d shouviksinha/heelloow"
                     }
                 }
