@@ -26,5 +26,6 @@
   "bugs": {
     "url": "https://github.com/Shouvik1996/node_docker/issues"
   },
-  "homepage": "https://github.com/Shouvik1996/node_docker#readme"
+  "homepage": "https://github.com/Shouvik1996/node_docker#readme",
+  "keywords": []
 }
