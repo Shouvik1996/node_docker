@@ -29,10 +29,12 @@ node
     stage('DeployToProduction') {
                     script {
                         
-                    	docker.withRegistry( '', registryCredential )
+                    	docker.withRegistry( '', registryCredential ){
+                            echo " login for pull succeed"
                         sh "docker pull shouviksinha/heelloow" 
                         
                         sh "docker run --name heelloow -p 3000:5000 -d shouviksinha/heelloow"
+                        }
                     }
                 }
 
